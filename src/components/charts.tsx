@@ -2,10 +2,14 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 import { Layout, PlotData } from 'plotly.js'; // Import the Layout type from plotly.js
 import { GraphData } from '../utilities/types';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const PieChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[key:string]:string}}) => {
   const labels : string[] = Object.keys(labelMap);
   const values : number[] = labels.map((key) => graphData[labelMap[key] as keyof GraphData]);
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
+  // const isAboveMediumScreen = useMediaQuery(theme.breakpoints.between('md','lg'));
   const data: Partial<PlotData>[] = [
     {
       type: 'pie',
@@ -38,7 +42,7 @@ const PieChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[
       b: 10, // Bottom margin
       pad: 0,  // Padding
     },
-    showlegend: true,
+    showlegend: !isMediumScreen,
     legend: {
       itemwidth:10,
       x:0,
@@ -49,6 +53,7 @@ const PieChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[
         family: 'Arial, sans-serif', 
         size: 10
       },
+      bgcolor:'rgba(0, 0, 0, 0)'
     },
     hovermode: 'closest',
     paper_bgcolor: '#e5e5e5', // Set the background color for the entire chart
