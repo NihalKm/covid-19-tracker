@@ -68,7 +68,7 @@ function CovidTracker(props:CovidTrackerProps) {
   return (
     <Stack className="App" divider={<Divider flexItem sx={{background:"#635d68", height:"6px"}}></Divider>} >
       <h1 style={{minHeight:"60px",display:"flex",justifyContent:"center",alignItems:"center",background:"#e5e5e5",fontWeight:"500"}}>COVID-19 Tracker India</h1>
-      <Stack direction={"row"} sx={{ height:"100%"}} divider={<Divider sx={{background:"#e5e5e5", width:"20px", border:"none"}} orientation="vertical" flexItem />}>
+      <Stack direction={{xs:"column",sm:"row"}} sx={{ height:"100%"}} divider={<Divider sx={{background:"#e5e5e5", width:"20px", border:"none"}} orientation="vertical" flexItem />}>
         <Stack sx={{ flex:"1"}}>
           <Stack sx={{background:"#e5e5e5"}}>
             <StatsSection graphData={graphData} stateFilterApplied={stateFilterApplied} />
@@ -76,7 +76,7 @@ function CovidTracker(props:CovidTrackerProps) {
           {
             loading ?
             <Loader/> :
-            <Stack direction={"row"} sx={{ background:"#e5e5e5", flex:"1", alignItems:"center"}}>
+            <Stack direction={"row"} minHeight={{xs:"150px"}} sx={{ background:"#e5e5e5", flex:"1", alignItems:"center"}}>
               <PieChartComponent labelMap={labelMap} graphData={graphData}/>
               <StateFilter label={"State"} value={stateFilter} options={stateOptions} onChange={handleFilterChange} />
             </Stack>
@@ -84,12 +84,12 @@ function CovidTracker(props:CovidTrackerProps) {
           {
             loading ?
             <Loader/> :
-            <Stack sx={{ flex:"1", alignItems:"center"}}>
+            <Stack sx={{ flex:"1", alignItems:"center"}} minHeight={{xs:"150px"}}>
               <BarChartComponent labelMap={labelMap} graphData={graphData}/>
             </Stack>
           }
         </Stack>
-        <Stack sx={{ background:loading?"#e5e1e1":"#e5e5e5", flex:"1.5", padding:loading?"0px":"10px 10px 10px" }}>
+        <Stack minHeight={{xs:"400px"}} sx={{ background:loading?"#e5e1e1":"#e5e5e5", flex:"1.5", padding:loading?"0px":"10px 10px 10px" }}>
           {
             loading ? 
             <Loader/> :
