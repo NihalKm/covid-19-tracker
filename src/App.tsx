@@ -8,7 +8,6 @@ import { Divider, SelectChangeEvent, Stack } from '@mui/material';
 import { Loader, StateFilter, StatsSection } from './components/commmoncomponents';
 import { BarChartComponent, PieChartComponent } from './components/charts';
 import MapComponent from './components/MapView';
-import { ThreeDots } from 'react-loader-spinner'
 
 const getGraphData = (data:StateData[]) => {
   // Aggregate totalCases, activeCases, recoveredCases and deaths
