@@ -67,7 +67,7 @@ function CovidTracker(props:CovidTrackerProps) {
 
   return (
     <Stack className="App" divider={<Divider flexItem sx={{background:"#635d68", height:"6px"}}></Divider>} >
-      <h1 style={{minHeight:"60px",display:"flex",justifyContent:"center",alignItems:"center",background:"#e5e5e5"}}>COVID-19 Tracker India</h1>
+      <h1 style={{minHeight:"60px",display:"flex",justifyContent:"center",alignItems:"center",background:"#e5e5e5",fontWeight:"500"}}>COVID-19 Tracker India</h1>
       <Stack direction={"row"} sx={{ height:"100%"}} divider={<Divider sx={{background:"#e5e5e5", width:"20px", border:"none"}} orientation="vertical" flexItem />}>
         <Stack sx={{ flex:"1"}}>
           <Stack sx={{background:"#e5e5e5"}}>

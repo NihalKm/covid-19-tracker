@@ -43,10 +43,11 @@ const StatsSection = ({graphData,stateFilterApplied}:{graphData:GraphData,stateF
     type Label = 'Active' | 'Total' | 'Recovered' | 'Deaths';
 
     const colorMap: Record<Label, string> = {
-      'Active': "#ffcc99",     
-      'Total': "#66b3ff",
-      'Recovered': "#99ff99",
-      'Deaths': "#ff9999"
+      // ['#E8885B', '#3a7bd5', '#66b370', '#ff6666']
+      'Active': "#E8885B",     
+      'Total': "#3a7bd5",
+      'Recovered': "#66b370",
+      'Deaths': "#ff6666"
     };
     
     interface StatBoxProps {
@@ -57,7 +58,7 @@ const StatsSection = ({graphData,stateFilterApplied}:{graphData:GraphData,stateF
     const StatBox: React.FC<StatBoxProps> = ({ label, value }) => {
         return (
             <Grid item xs={6} p={1.5} >
-                <Box sx={{fontSize:"12px",height:"100%", background:colorMap[label], borderRadius:"10px", color:"#a18156", boxShadow:"0px 0px 0px 1px white"}}>
+                <Box sx={{fontSize:"12px",height:"100%", background:colorMap[label], borderRadius:"10px", color:"black", boxShadow:"1px 1px 0px 1px grey"}}>
                     <p>{label}</p>
                     <strong>{value}</strong>
                     <p>{stateFilterApplied? "In India" : "Selected States"}</p>

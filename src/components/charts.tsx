@@ -14,13 +14,17 @@ const PieChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[
       textinfo: 'percent',
       hoverinfo: 'y',
       orientation: 'h', // Keep text horizontal
-      textposition: 'inside', // Po
+      textposition: 'inside', 
+      textfont : {
+        color: "black",
+        size:10
+      },
       marker: {
-        colors: ['#ffcc99', '#66b3ff', '#99ff99', '#ff9999'],
+        colors: ['#E8885B', '#3a7bd5', '#66b370', '#ff6666'],
         line: {
-          color: '#ffffff', // Border color
-          width: 1, // Border width
-        },
+          color: 'grey', // Border color
+          width: 0.5, // Border width
+        }
       },
     },
   ];
@@ -73,7 +77,7 @@ const BarChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[
       textposition:"inside",
       hoverinfo:'x+y',
       marker: {
-        color: ['#ffcc99', '#66b3ff', '#99ff99', 'red'],
+        color: ['#E8885B', '#3a7bd5', '#66b370', '#ff6666'],
         opacity: 0.8,
         line: {
           color: 'grey',
@@ -81,7 +85,8 @@ const BarChartComponent = ({graphData,labelMap}:{graphData:GraphData,labelMap:{[
         }
       },
       textfont: {
-        color: "#a18156"
+        color: "black",
+        size:9
       }
     },
   ];
